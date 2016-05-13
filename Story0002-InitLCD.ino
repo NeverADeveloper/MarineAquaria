@@ -20,20 +20,28 @@
 #define D6_pin 6
 #define D7_pin 7
 LiquidCrystal_I2C lcd(I2C_ADDR,En_pin,Rw_pin,Rs_pin,D4_pin,D5_pin,D6_pin,D7_pin);
-
+int chars = 20; //Define the number of characters per row of the chosen display
+int rows = 4; //Define the number of rows of the chosen display 
 
 void setup()
 {  // set lcd
-  lcd.begin (16,2); // Define the LCD matrix (chars, rows)
+  lcd.begin (chars, rows); // Define the LCD matrix (chars, rows)
   lcd.setBacklightPin(Backlight_pin,POSITIVE); // Switch on the backlight
   lcd.setBacklight(HIGH);
   lcd.home ();
 }
 
 void loop()
-{  
+{ //test code to ensure all lines display text 
   lcd.setCursor(0,0);
-  lcd.print("Line 1");
+  lcd.print("Row 1");
   lcd.setCursor(0,1);
-  lcd.print("Line 2");
+  lcd.print("Row 2");
+  if rows == 4 //For 4-row displays
+  {
+     lcd.setCursor(0,2);
+     lcd.print("Row 3");
+     lcd.setCursor(0,3);
+     lcd.print("Row 4"); 
+  }
 }
