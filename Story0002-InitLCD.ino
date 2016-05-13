@@ -4,6 +4,13 @@
 
     Requirements:
     * i2c LCD
+    
+    Connections:
+        i2c     Nano
+        VCC     5v
+        GND     GND
+        SDA     A4
+        SCL     A5
 */
 
 #include <Wire.h>
