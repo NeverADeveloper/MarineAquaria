@@ -1,9 +1,17 @@
-/*
-    0001 - Initial Real time Clock (RTC) Configuration
-    by Andrew Westfold
-
-    Requirements:
-    * RTC
+/*  
+*   Dosing System Story 0001 - Initial Real time Clock (RTC) Configuration
+ *  by Andrew Westfold. (c) April 2016
+ *  
+ *  Requirements:
+ *      Arduino Nano
+ *      i2c RTC
+ *  
+ *  Connections
+ *      i2c     Nano
+ *      VCC     5v
+ *      GND     GND
+ *      SDA     A4
+ *      SCL     A5
 */
 
 #include <Wire.h>
