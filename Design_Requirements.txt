@@ -1,0 +1,36 @@
+Controller for five dosing pumps.
+
+Control variables are:
+- Total volume dosed per 24 hrs
+- Number of sub-doses per 24 hours
+- Time for each dose.
+Note: for pumps 1, 2, & 3, the total volume and number of sub-doses are to be the same. However, there is to be a time offset between them (ie. only one pump works at a time)
+Pumps 4 and 5 can have different values for each control variable. Alternatively, pumps 4 and 5 might run off level switches?
+
+Calibration
+Need to have some method of easily calibrating the volume dosed (ml) against pump run-time.
+
+Alarms/logs
+Provide alarms for fluid levels in sump, and each storage container.
+Log each sub-dose (volume/run-time and time each sub-dose is administered)
+
+Use
+Must be able to easily set number of sub-doses and the total volume of pumps 1/2/3 and 4 and/or 5. For pumps 1/2/3, the unit must calculate the best times for each pump sub-dose.
+(Total daily dose divided by the number of sub-doses, divided by 3 to give the pump run-offsets)
+
+Hardware
+Arduino Nano/Micro
+i2c LCD display
+i2c RTC
+5x Motor Drivers (i2c 16-channel?)
+5x low voltage (6v) Peristaltic dosing pumps
+5x level detection switches (float for sump, other for dosing containers?)
+
+Stories
+0001 - As a user of the dosing pump, I need an real time clock to accurately measure the intervals between sub-doses.
+0002 - 
+0003 - As a user of the first dosing pump, I need to be able to enter the required settings.
+       (Settings are: total dose, number of sub-doses.)
+0004 - As a user of the 2nd and 3rd dosing pumps, the system needs to be able to take the 1st pump settings, apply them to the 2nd and 3rd pumps, and calculate the required timeing offsets based on these parameters.
+0005 - As a user of the dosing pump, I need the three (1, 2, & 3) main dosing pumps to automaticially run at the required tiems, with set offsets.
+0006 - 
