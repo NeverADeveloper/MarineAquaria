@@ -1,16 +1,17 @@
-/*
-    0002 - Initial LCD configuration
-    by Andrew Westfold
-
-    Requirements:
-    * i2c LCD
-    
-    Connections:
-        i2c     Nano
-        VCC     5v
-        GND     GND
-        SDA     A4
-        SCL     A5
+/*  
+*   Dosing System Story 0002 - Initial LCD configuration
+ *  by Andrew Westfold. (c) April 2016
+ *  
+ *  Requirements:
+ *      Arduino Nano
+ *      i2c LCD (16x2 or 20x4)
+ *  
+ *  Connections:
+ *      i2c     Nano
+ *      VCC     5v
+ *      GND     GND
+ *      SDA     A4
+ *      SCL     A5
 */
 
 #include <Wire.h>
